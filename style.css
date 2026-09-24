@@ -1,0 +1,221 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #120f17;
+  --card: rgba(35, 27, 43, 0.92);
+  --card-light: rgba(255, 255, 255, 0.09);
+  --text: #fffaff;
+  --muted: #d0c7d5;
+  --accent: #f2a1b7;
+  --border: rgba(255, 255, 255, 0.15);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(242, 161, 183, 0.25), transparent 32%),
+    radial-gradient(circle at 90% 90%, rgba(119, 87, 151, 0.28), transparent 35%),
+    var(--background);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(145deg, transparent 35%, rgba(255, 255, 255, 0.035));
+}
+
+.page-shell {
+  width: min(100% - 28px, 560px);
+  margin: 0 auto;
+  padding: 22px 0 18px;
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  padding: 18px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(14px);
+}
+
+.confetti {
+  padding: 2px 0 15px;
+  font-size: clamp(1.15rem, 5vw, 1.65rem);
+  letter-spacing: 0.15em;
+  word-spacing: 0.25em;
+  animation: float 3s ease-in-out infinite;
+}
+
+.photo-wrap {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 310px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 21px;
+  background: #29202f;
+}
+
+.photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 55% 0 0;
+  background: linear-gradient(transparent, rgba(18, 15, 23, 0.35));
+  pointer-events: none;
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 68vh;
+  object-fit: contain;
+}
+
+.eyebrow {
+  margin: 27px 0 8px;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 9vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.birth-date {
+  margin: 14px 0 0;
+  color: #ffe5ec;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.intro {
+  max-width: 390px;
+  margin: 12px auto 23px;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.actions {
+  display: grid;
+  gap: 12px;
+}
+
+.action-button {
+  display: flex;
+  width: 100%;
+  min-height: 70px;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  color: var(--text);
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--card-light);
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.action-button:hover,
+.action-button:focus-visible {
+  border-color: rgba(242, 161, 183, 0.65);
+  background: rgba(255, 255, 255, 0.14);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.action-button:active {
+  transform: scale(0.985);
+}
+
+.action-button.primary {
+  border-color: rgba(242, 161, 183, 0.48);
+  background: linear-gradient(135deg, rgba(242, 161, 183, 0.28), rgba(141, 73, 97, 0.25));
+}
+
+.button-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 1.35rem;
+}
+
+.action-button strong,
+.action-button small {
+  display: block;
+}
+
+.action-button strong {
+  font-size: 0.98rem;
+}
+
+.action-button small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.79rem;
+}
+
+.status {
+  min-height: 42px;
+  margin: 18px 4px 3px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+footer {
+  padding: 16px 0 0;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-size: 0.72rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@media (max-width: 390px) {
+  .page-shell {
+    width: min(100% - 18px, 560px);
+    padding-top: 9px;
+  }
+
+  .hero-card {
+    padding: 12px;
+    border-radius: 23px;
+  }
+
+  .photo-wrap {
+    min-height: 0;
+  }
+
+  .profile-photo {
+    max-height: 62vh;
+  }
+}

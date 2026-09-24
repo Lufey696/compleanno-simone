@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17131d">
+  <title>Compleanno Simone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero-card" aria-labelledby="page-title">
+      <div class="confetti" aria-hidden="true">🎈 🎉 🎂 🎁 ✨ 🥳</div>
+
+      <div class="photo-wrap">
+        <img src="Simo.JPEG" alt="Foto di Simone" class="profile-photo">
+      </div>
+
+      <p class="eyebrow">🎉 OGGI SI FESTEGGIA 🎉</p>
+      <h1 id="page-title">Compleanno Simone</h1>
+      <p class="birth-date">🎂 Nato l'08 ottobre 1974 🎉</p>
+      <p class="intro">
+        Oggi compie 18 anni… con 34 anni di esperienza! 🥳🎂
+      </p>
+
+      <div class="actions">
+        <button class="action-button primary" id="cameraButton" type="button">
+          <span class="button-icon">📸</span>
+          <span>
+            <strong>Scatta foto o video</strong>
+            <small>Usa la fotocamera del telefono</small>
+          </span>
+        </button>
+
+        <button class="action-button" id="galleryButton" type="button">
+          <span class="button-icon">🖼️</span>
+          <span>
+            <strong>Scegli dalla galleria</strong>
+            <small>Carica foto o video già presenti</small>
+          </span>
+        </button>
+
+        <button class="action-button" id="pendingButton" type="button">
+          <span class="button-icon">☁️</span>
+          <span>
+            <strong>File in attesa</strong>
+            <small id="pendingText">Nessun file pronto per l'invio</small>
+          </span>
+        </button>
+      </div>
+
+      <p class="status" id="statusMessage" role="status" aria-live="polite">
+        Questa è una prova: il collegamento al NAS verrà aggiunto successivamente.
+      </p>
+
+      <input id="cameraInput" type="file" accept="image/*,video/*" capture="environment" hidden>
+      <input id="galleryInput" type="file" accept="image/*,video/*" multiple hidden>
+    </section>
+
+    <footer>🎁 Compleanno Simone · versione di prova 🎁</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
