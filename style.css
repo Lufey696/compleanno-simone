@@ -38,12 +38,11 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background:
-    linear-gradient(
-      145deg,
-      transparent 35%,
-      rgba(255, 255, 255, 0.035)
-    );
+  background: linear-gradient(
+    145deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.035)
+  );
 }
 
 .page-shell {
@@ -83,12 +82,11 @@ body::before {
   overflow: hidden;
   border: 1px solid rgba(137, 211, 255, 0.2);
   border-radius: 21px;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(42, 103, 163, 0.35),
-      rgba(5, 17, 34, 0.9)
-    );
+  background: linear-gradient(
+    145deg,
+    rgba(42, 103, 163, 0.35),
+    rgba(5, 17, 34, 0.9)
+  );
 }
 
 .photo-wrap::after {
@@ -183,13 +181,21 @@ h1 {
 
 .action-button.primary {
   border-color: rgba(115, 211, 255, 0.65);
-  background:
-    linear-gradient(
-      135deg,
-      rgba(46, 156, 225, 0.48),
-      rgba(22, 76, 145, 0.5)
-    );
+  background: linear-gradient(
+    135deg,
+    rgba(46, 156, 225, 0.48),
+    rgba(22, 76, 145, 0.5)
+  );
   box-shadow: 0 8px 25px rgba(19, 127, 208, 0.18);
+}
+
+.action-button.joke {
+  border-color: rgba(255, 214, 102, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 214, 102, 0.16),
+    rgba(20, 70, 130, 0.35)
+  );
 }
 
 .button-icon {
@@ -227,6 +233,62 @@ h1 {
   line-height: 1.45;
 }
 
+/* Sezione nascosta della sorpresa Ford Escort */
+.escort-section {
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid rgba(255, 214, 102, 0.35);
+  border-radius: 21px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 214, 102, 0.1),
+    rgba(10, 29, 55, 0.9)
+  );
+  animation: appear 350ms ease;
+}
+
+.escort-section h2 {
+  margin: 0 0 8px;
+  color: #ffd666;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.escort-text {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.photo-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.photo-grid figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(145, 211, 255, 0.22);
+  border-radius: 16px;
+  background: rgba(4, 16, 32, 0.75);
+}
+
+.photo-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.photo-grid figcaption {
+  padding: 8px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 footer {
   padding: 16px 0 0;
   color: rgba(214, 238, 255, 0.6);
@@ -242,6 +304,18 @@ footer {
 
   50% {
     transform: translateY(-5px);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
