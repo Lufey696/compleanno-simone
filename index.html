@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#17131d">
+  <meta name="theme-color" content="#071426">
   <title>Compleanno Simone</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -26,9 +26,7 @@
 
       <p class="eyebrow">🎉 OGGI SI FESTEGGIA 🎉</p>
 
-      <h1 id="page-title">
-        Compleanno Simone
-      </h1>
+      <h1 id="page-title">Compleanno Simone</h1>
 
       <p class="birth-date">
         🎂 Nato l'08 ottobre 1974 🎉
@@ -47,20 +45,72 @@
           rel="noopener noreferrer"
         >
           <span class="button-icon">📸</span>
-
           <span>
             <strong>Carica foto o video</strong>
-            <small>
-              Condividi un ricordo della serata
-            </small>
+            <small>Condividi un ricordo della serata</small>
           </span>
         </a>
 
+        <a
+          class="action-button"
+          href="https://gofile.me/883MD/tvnO8bafN"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="button-icon">👀</span>
+          <span>
+            <strong>Ricordi della serata</strong>
+            <small>Apri la galleria delle foto</small>
+          </span>
+        </a>
+
+        <button
+          class="action-button joke"
+          id="escortButton"
+          type="button"
+          aria-expanded="false"
+          aria-controls="escortPhotos"
+        >
+          <span class="button-icon">🚗</span>
+          <span>
+            <strong>Servizio Escort</strong>
+            <small>Premi qui per una sorpresa</small>
+          </span>
+        </button>
+
       </div>
 
-      <p class="status" role="status">
-        Grazie per aver condiviso un ricordo della festa! 🎉
+      <p class="status">
+        Se la rete è debole, salva la foto sul telefono e riprova più tardi. 📶
       </p>
+
+      <section id="escortPhotos" class="escort-section" hidden>
+        <h2>🚗 Servizio Escort attivato! 🚗</h2>
+
+        <p class="escort-text">
+          Ecco le escort richieste… Ford Escort! 😄
+        </p>
+
+        <div class="photo-grid">
+          <figure>
+            <img
+              src="01.jpg"
+              alt="CHE PESAVI EH?"
+              loading="lazy"
+            >
+            <figcaption>COSA PENSAVI EH?</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="02.jpg"
+              alt="PAGA LA MOSSA"
+              loading="lazy"
+            >
+            <figcaption>PAGA LA MOSSA</figcaption>
+          </figure>
+        </div>
+      </section>
 
     </section>
 
@@ -68,5 +118,24 @@
       🎁 Compleanno Simone · 08 ottobre 2026 🎁
     </footer>
   </main>
+
+  <script>
+    const escortButton = document.getElementById("escortButton");
+    const escortPhotos = document.getElementById("escortPhotos");
+
+    escortButton.addEventListener("click", () => {
+      const aperta = !escortPhotos.hidden;
+
+      escortPhotos.hidden = aperta;
+      escortButton.setAttribute("aria-expanded", String(!aperta));
+
+      if (!aperta) {
+        escortPhotos.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    });
+  </script>
 </body>
 </html>
